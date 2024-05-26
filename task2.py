@@ -17,7 +17,6 @@ def draw_pythagoras_tree(t, branch_length, level):
     t.setposition(pos)
     t.setheading(angle)
     
-    # Права гілка
     t.right(45)
     draw_pythagoras_tree(t, branch_length * math.sqrt(2) / 2, level - 1)
     
@@ -26,14 +25,14 @@ def draw_pythagoras_tree(t, branch_length, level):
 
 # Основна функція
 def main():
+    level = int(input("Введіть рівень рекурсії: "))
+    
     screen = turtle.Screen()
     screen.title("Pythagoras Tree Fractal")
     
     t = turtle.Turtle()
-    t.speed(0) 
+    t.speed(0)
     t.left(90)
-    
-    level = int(input("Введіть рівень рекурсії: "))
     
     draw_pythagoras_tree(t, 100, level)
     
